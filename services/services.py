@@ -6,14 +6,14 @@ def get_bot_choice() -> str:
     return choice(['rock', 'scissors', 'paper'])
 
 
-def _normalize_user_answer(user_answer: str) -> str:
+def _normalize_user_answer(user_answer: str | None) -> str:
     for key in LEXICON_RU:
         if LEXICON_RU[key] == user_answer:
             return key
     raise Exception
 
 
-def get_winner(user_choice: str, bot_choice: str) -> str:
+def get_winner(user_choice: str | None, bot_choice: str) -> str:
     user_choice: str = _normalize_user_answer(user_choice)
     rules: dict[str, str] = {
                              'rock': 'scissors',
