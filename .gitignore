@@ -3,3 +3,4 @@ venv/
 .vs_code/
 __pycache__/
 .mypy_cache/
+.vscode/
